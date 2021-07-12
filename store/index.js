@@ -6,23 +6,15 @@ const store = new Vuex.Store({
 		number: 0
 	},
 	mutations: {
-		update(state, {
-			payload: {
-				type,
-				value
-			}
-		}) {
+		update(state, { type, value }) {
 			state[type] = value
 		},
 	},
 	actions: {
-		asyncUpdate({
-			commit
-		}, payload) {
+		asyncUpdate({ commit }, payload) {
 			setTimeout(() => {
 				commit("update", payload)
 			}, 1000)
-
 		}
 	}
 })
