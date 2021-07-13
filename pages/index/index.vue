@@ -1,16 +1,22 @@
 <template>
 	<view class="container">
-		<text>首页</Text>
-		<uni-table stripe emptyText="暂无更多数据">
-			<uni-tr>
-				<uni-th v-for="(item,index)  in title" :id="item.id" align="center">{{item.name}}</uni-th>
-			</uni-tr>
-			<uni-tr v-for="(item,index)  in data" :id="item.id">
-				<uni-td align="center">{{item.name}}</uni-td>
-				<uni-td align="center">{{item.age}}</uni-td>
-				<uni-td align="center">{{item.sex}}</uni-td>
-			</uni-tr>
-		</uni-table>
+		
+		<view class="default-title"> image-图片 </view>
+		<view class="padding30-lr flex-space-between">
+			<x-image preview
+				src="http://cdn-ali-img-staticbz.shanhutech.cn/bizhi/staticwp/201711/e2fdd69e2fb6facee2cdabefceb7c13b.jpg">
+			</x-image>
+			<x-image preview
+				src="http://cdn-ali-img-shstaticbz.shanhutech.cn/bizhi/staticwp/202105/7d5bf46cd468a1192bf2b51a99fb7a3c--1041061742.jpg">
+			</x-image>
+			<x-image src=""></x-image>
+		</view>
+		
+		<view class="default-title"> input-输入框 </view>
+		<view class="padding30-lr">
+			<x-input @input="handleInput" v-model="value" />
+		</view>
+		
 	</view>
 </template>
 
@@ -18,24 +24,20 @@
 	export default {
 		data() {
 			return {
-				title:[
-					{name:"姓名",id:1},
-					{name:"年龄",id:2},
-					{name:"性别",id:3},
-				],
-				data:[
-					{name:'腾仔',sex:"男",age:1,id:1},
-					{name:'腾龙',sex:"男",age:12,id:2},
-					{name:'腾龙',sex:"男",age:12,id:3},
-					{name:'腾龙',sex:"男",age:12,id:4},
-				]
+				value: "我是input-demo"
 			}
 		},
-		methods: { }
+		methods: {
+			handleInput(e) {
+				console.log('e', e)
+			}
+		}
 	}
 </script>
 
 <style>
+	@import "~@/assets/scss/mixin.scss";
+
 	.container {
 		padding: 20px;
 		font-size: 14px;

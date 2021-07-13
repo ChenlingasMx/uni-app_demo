@@ -1,0 +1,140 @@
+/*每个页面公共css */
+view,
+scroll-view,
+swiper,
+swiper-item,
+cover-view,
+cover-image,
+icon,
+text,
+rich-text,
+progress,
+button,
+checkbox,
+form,
+input,
+label,
+radio,
+slider,
+switch,
+textarea,
+navigator,
+audio,
+camera,
+image,
+video {
+	box-sizing: border-box;
+	font-size: 30rpx;
+	color: #333;
+	font-weight: 400;
+}
+
+page {
+	background-color: #f5f5f5;
+}
+
+// hover
+.opacity-hover {
+	opacity: 0.7;
+	transition: opacity 180ms;
+}
+
+// 吸顶
+.sticky-box {
+	/* #ifndef APP-PLUS-NVUE */
+	display: flex;
+	position: -webkit-sticky;
+	/* #endif */
+	position: sticky;
+	top: var(--window-top);
+	z-index: 99;
+}
+
+.clear-fix:after {
+	content: ' ';
+	clear: both;
+	display: block;
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+}
+
+.flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 1;
+}
+
+.margin-cneter {
+	margin: 0 auto;
+}
+
+.padding30 {
+	padding: 30rpx;
+}
+
+.padding30-lr {
+	padding: 0 30rpx;
+}
+
+.loading-icon {
+	width: 28rpx;
+	height: 28rpx;
+	border: 1px solid $uni-color-primary;
+	border-radius: 50%;
+	margin: 0 6px;
+	display: inline-block;
+	vertical-align: middle;
+	clip-path: polygon(0% 0%, 100% 0%, 100% 30%, 0% 30%);
+	animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+	from {
+		transform: rotatez(0deg);
+	}
+
+	to {
+		transform: rotatez(360deg);
+	}
+}
+.flex-space-between {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.form-selector {
+	flex: 1;
+	width: 100%;
+	padding: 20rpx 30rpx 20rpx 0;
+	min-height: 100rpx;
+	display: flex;
+	align-items: center;
+	line-height: 30rpx;
+	font-size: 26rpx;
+	font-family: PingFang SC;
+	font-weight: 400;
+	color: #999999;
+	position: relative;
+
+	&.active {
+		color: #333;
+	}
+	.select-icon {
+		position: absolute;
+		font-size: 24rpx;
+		right: 0;
+		color: #999;
+		transition: all 0.3s;
+	}
+}
+.default-title{
+	padding: 30rpx;
+	line-height: 1;
+	font-size: 32rpx;
+	font-family: PingFang;
+	font-weight: bold;
+	color: #333333;
+}
