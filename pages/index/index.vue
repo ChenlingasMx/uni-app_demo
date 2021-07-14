@@ -13,10 +13,20 @@
 		</view>
 		
 		<view class="default-title"> input-输入框 </view>
-		<view class="padding30-lr">
+		<view class="padding30">
 			<x-input @input="handleInput" v-model="value" />
 		</view>
 		
+		<view class="default-title"> button-按钮 </view>
+		<view class="padding30">
+			<x-button  themeColor="red" disabled loading plain > 按钮 </x-button>
+		</view>
+		<view class="padding30">
+			<x-button shapeStyle="circle" width="64px" height="32px" > 按钮 </x-button>
+		</view>
+		<view class="padding30">
+			<x-button type="warning"> 按钮 </x-button>
+		</view>
 	</view>
 </template>
 
@@ -24,7 +34,7 @@
 	export default {
 		data() {
 			return {
-				value: "我是input-demo"
+				value: "我是input-demo",
 			}
 		},
 		methods: {
